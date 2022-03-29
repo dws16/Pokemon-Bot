@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import Catch from './components/Catch';
+import Pokemons from './components/Pokemons';
+import PokemonDetail from './components/PokemonDetail';
+import MyPokemon from './components/MyPokemon';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+function NoMatch() {
+  return (
+    <div>
+      <h1>404</h1>
+      <p>Page Not Found</p>
+    </div>
+  )
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <header className="App-header">
+          <Routes>
+            <Route path='/' element={<Pokemons />} />
+            <Route path='/myPokemon' element={<MyPokemon />} />
+            <Route path='/pokemon' element={<PokemonDetail />} >
+              <Route path=':pokemon' element={<PokemonDetail />} />
+            </Route>
+            <Route path='*' element={<NoMatch />} />
+          </Routes>
+        </header>
+      </div >
+    </BrowserRouter >
   );
 }
 

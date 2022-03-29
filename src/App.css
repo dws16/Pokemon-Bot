@@ -7,14 +7,213 @@
   pointer-events: none;
 }
 
+.text-small {
+  font-size: 0.8em !important;
+}
+
+.link-disabled {
+  text-decoration: none;
+  color: black;
+}
+
+.overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-small {
+  border-radius: 15px;
+  background-color: #f0f8ff;
+  box-shadow: 5px 8px #D6ECFF;
+}
+
+.footer {
+  height: 70px;
+  background-color: #EFA00B;
+  border-radius: 30px 30px 0 0;
+}
+
+.item-footer {
+  background: var(--main-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 30% 30% 0px 0px;
+}
+
+.main-item {
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  padding: .3rem;
+  border-radius: 50%;
+  background-image: url("./img/pokeball.png");
+  background-size: cover;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pokeball-shake {
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+  animation: Pokeball-shake infinite 1s;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.pokeball-rotate {
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+  animation: App-logo-spin infinite 3s linear;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.pokeball {
+  height: 20px;
+  width: 20px;
+  background-size: cover;
+  transform: rotate(-25deg);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.item-text {
+  height: 70px;
+  position: absolute;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #1a1a1a;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.radius-30 {
+  border-radius: 30px;
+}
+
+.square-large {
+  border-radius: 30px;
+  background-color: #FFFFFF;
+}
+
+.item-logo {
+  background-color: #61dafb;
+}
+
+.card-large {
+  border-radius: 30px 30px 0 0;
+  background-color: #FFFFFF;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+
+.type-normal {
+  background-color: #aa9;
+}
+
+.type-fire {
+  background-color: #f42
+}
+
+.type-water {
+  background-color: #39f
+}
+
+.type-electric {
+  background-color: #fc3
+}
+
+.type-grass {
+  background-color: #7c5
+}
+
+.type-ice {
+  background-color: #6cf
+}
+
+.type-fighting {
+  background-color: #b54
+}
+
+.type-poison {
+  background-color: #a59
+}
+
+.type-ground {
+  background-color: #db5
+}
+
+.type-flying {
+  background-color: #89f
+}
+
+.type-psychic {
+  background-color: #f59
+}
+
+.type-bug {
+  background-color: #ab2
+}
+
+.type-rock {
+  background-color: #ba6
+}
+
+.type-ghost {
+  background-color: #66b
+}
+
+.type-dragon {
+  background-color: #76e
+}
+
+.type-dark {
+  background-color: #754
+}
+
+.type-steel {
+  background-color: #aab
+}
+
+.type-fairy {
+  background-color: #e9e
+}
+
+.btn-catch {
+  background-color: #FFFFFF;
+  border-radius: 50px;
+  color: #1a1a1a;
+  padding: .5rem;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-back {
+  background-color: #FFFFFF;
+  border-radius: 50px;
+  color: #1a1a1a;
+  padding: .5rem;
+  font-weight: bold;
+  border: none;
+}
+
 .App-header {
-  background-color: #282c34;
+  background-color: #EFA00B;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -32,7 +231,27 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes Pokeball-shake {
+
+  10%,
+  90% {
+    transform: rotate(-25deg);
+  }
+
+  20%,
+  80% {
+    transform: rotate(-15deg);
+  }
+
+  30%,
+  70% {
+    transform: rotate(0deg);
+  }
+
 }
