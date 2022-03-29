@@ -69,7 +69,7 @@ class MyPokemon extends Component {
       items: [],
       isLoading: true
     })
-    JSON.parse(localStorage.getItem('myPokemon')).map(item => this.getPokemonDetail(item.pokemon, item.nickname));
+    JSON.parse(localStorage.getItem('myPokemon'))?.map(item => this.getPokemonDetail(item.pokemon, item.nickname));
   }
 
   releasePokemon(e) {
@@ -94,6 +94,16 @@ class MyPokemon extends Component {
   }
 
   render() {
+    if (this.state.items.length === 0) {
+      return (
+        <Container style={{ marginBottom: '80px' }}>
+          <Header />
+          <div style={{ marginTop: '100px' }}>
+            <h5>You don't have any pokemon yet.</h5>
+          </div>
+        </Container >
+      )
+    }
 
     if (this.state.isLoading) {
       return (
@@ -101,17 +111,6 @@ class MyPokemon extends Component {
           <img src={pokeball} alt="" className="pokeball-rotate" />
           <p>Loading .....</p>
         </div>
-      )
-    }
-
-    if (!this.state.items) {
-      return (
-        <Container style={{ marginBottom: '80px' }}>
-          <Header />
-          <div style={{ marginTop: '100px' }}>
-            <h5>You don't have a pokemon yet.</h5>
-          </div>
-        </Container >
       )
     }
     return (
