@@ -1,6 +1,5 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import Catch from './components/Catch';
 import Pokemons from './components/Pokemons';
 import PokemonDetail from './components/PokemonDetail';
 import MyPokemon from './components/MyPokemon';
